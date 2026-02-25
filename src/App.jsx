@@ -15,9 +15,8 @@ const CONFIG = {
   graduates: "800+",
   
   // 🔐 TELEGRAM BOT SOZLAMALARI
-TTELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN  
-TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID  
-  
+TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
+TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
   address: {
     region: "Toshkent viloyati",
     district: "Chinoz tumani", 
