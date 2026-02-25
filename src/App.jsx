@@ -19,7 +19,7 @@ TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
 TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
   address: {
     region: "Toshkent viloyati",
-    district: "Chinoz tumani", 
+    district: "Chinoz tumani",      
     city: "Chinoz shahri",
     street: "Sh.Rashidov ko'chasi, 90-uy",
     landmark: "Chinoz hokimiyatiga yetmasdan, Sofia ro'parasi",
