@@ -10,16 +10,18 @@ const CONFIG = {
   founder: "Rasul Israilov",
   phone: "+998 99 405 32 48",
   telegram: "@rasul_israilov",
-  instagram: "@rasul_israiov",
+  instagram: "@rasul_israilov",
   telegramChannel: "https://t.me/roboschool_chinoz",
   graduates: "800+",
   
   // 🔐 TELEGRAM BOT SOZLAMALARI
+  // Token .env faylda saqlanadi (xavfsizlik uchun)
 TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
 TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
+  
   address: {
     region: "Toshkent viloyati",
-    district: "Chinoz tumani",      
+    district: "Chinoz tumani", 
     city: "Chinoz shahri",
     street: "Sh.Rashidov ko'chasi, 90-uy",
     landmark: "Chinoz hokimiyatiga yetmasdan, Sofia ro'parasi",
@@ -37,8 +39,8 @@ const sendToTelegram = async (userData) => {
   const botToken = CONFIG.TELEGRAM_BOT_TOKEN;
   const chatId = CONFIG.TELEGRAM_CHAT_ID;
   
-  if (botToken === "YOUR_BOT_TOKEN_HERE") {
-    console.log("⚠️ Telegram bot token o'rnatilmagan!");
+  if (!botToken) {
+    console.log("⚠️ Telegram bot token topilmadi! .env faylni tekshiring.");
     console.log("📋 Yangi mijoz:", userData);
     return false;
   }
@@ -115,8 +117,16 @@ const generateAIResponse = (userMessage) => {
   
   if (/^(salom|assalom|hello|hi|hey)/.test(msg)) {
     return {
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎯 Yosh toifalari:\n👶 6–8 yosh — LEGO robotlar\n🧒 8–15 yosh — sensorli robotlar\n👨‍💻 16+ yosh — AI, dasturlash\n\nQanday savol bilan keldingiz?`,
-      suggestions: ["📚 Kurslar", "🏆 Yutuqlarimiz", "🧠 AI kursi", "📝 Ro'yxatdan o'tish"]
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"]
+    };
+  }
+
+  // Dars vaqtlari
+  if (msg.includes('vaqt') || msg.includes('soat') || msg.includes('qachon') || msg.includes('smena') || msg.includes('jadval')) {
+    return {
+      text: `⏰ DARS VAQTLARI\n\nDarslarimiz haftada 3 marotaba, 2 soatdan bo'lib o'tadi.\n\n🌅 ERTALABKI SMENA:\n• 08:00 — 10:00\n• 10:00 — 12:00\n\n🌆 TUSHDAN KEYIN:\n• 15:00 — 17:00\n\n📌 Farzandingiz maktabda ertalabki yoki tushdan keyingi smenada o'qishiga qarab tanlashingiz mumkin.\n\n🎁 Birinchi sinov darsi BEPUL!`,
+      suggestions: ["📝 Ro'yxatdan o'tish", "💰 Narxlar", "📍 Manzil", "📞 Bog'lanish"]
     };
   }
 
@@ -585,8 +595,8 @@ export default function RoboschoolAIChatBot() {
     {
       id: 1, 
       type: 'bot',
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\nQanday savol bilan keldingiz?`,
-      suggestions: ["📚 Kurslar", "🏆 Yutuqlarimiz", "🧠 AI kursi", "📝 Ro'yxatdan o'tish"],
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"],
       timestamp: new Date(), 
       streamComplete: true
     }
@@ -692,6 +702,36 @@ export default function RoboschoolAIChatBot() {
         onClose={() => setShowSuccessModal(false)}
         data={registeredData}
       />
+
+      {/* 🎯 MART OYI UCHUN QABUL BANNER */}
+      <div style={{ 
+        width: '100%', 
+        maxWidth: '500px', 
+        marginBottom: '10px',
+        padding: '12px 16px',
+        background: 'linear-gradient(135deg, #ff6b35, #f7931e, #ffcc00)',
+        borderRadius: '16px',
+        textAlign: 'center',
+        boxShadow: '0 4px 20px rgba(255, 107, 53, 0.4)',
+        animation: 'pulse-banner 2s infinite'
+      }}>
+        <div style={{ 
+          fontSize: '16px', 
+          fontWeight: '800', 
+          color: '#fff',
+          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+          marginBottom: '4px'
+        }}>
+          🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!
+        </div>
+        <div style={{ 
+          fontSize: '11px', 
+          color: 'rgba(255,255,255,0.9)',
+          fontWeight: '500'
+        }}>
+          🎁 Birinchi sinov darsi BEPUL
+        </div>
+      </div>
 
       {/* Header */}
       <div style={{ width: '100%', maxWidth: '500px', marginBottom: '10px' }}>
@@ -901,6 +941,10 @@ export default function RoboschoolAIChatBot() {
       <style>{`
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        @keyframes pulse-banner { 
+          0%, 100% { transform: scale(1); box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4); } 
+          50% { transform: scale(1.02); box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6); } 
+        }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
         input::placeholder { color: rgba(255,255,255,0.4) !important; }
