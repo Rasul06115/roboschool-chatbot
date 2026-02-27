@@ -10,7 +10,7 @@ const CONFIG = {
   founder: "Rasul Israilov",
   phone: "+998 99 405 32 48",
   telegram: "@rasul_israilov",
-  instagram: "@rasul_israilov",
+  instagram: "@rasul_israiov",
   telegramChannel: "https://t.me/roboschool_chinoz",
   graduates: "800+",
   
