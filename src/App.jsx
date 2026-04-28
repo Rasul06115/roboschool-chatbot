@@ -10,14 +10,14 @@ const CONFIG = {
   founder: "Rasul Israilov",
   phone: "+998 99 405 32 48",
   telegram: "@rasul_israilov",
-  instagram: "@rasul_israilov",
+  instagram: "@rasul_isralov",
   telegramChannel: "https://t.me/roboschool_chinoz",
   graduates: "800+",
   
   // 🔐 TELEGRAM BOT SOZLAMALARI
   // Token .env faylda saqlanadi (xavfsizlik uchun)
-TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
-TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
+  TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
+  TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
   
   address: {
     region: "Toshkent viloyati",
@@ -117,7 +117,7 @@ const generateAIResponse = (userMessage) => {
   
   if (/^(salom|assalom|hello|hi|hey)/.test(msg)) {
     return {
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 APREL OYI UCHUN QABUL BOSHLANDI!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"]
     };
   }
@@ -595,7 +595,7 @@ export default function RoboschoolAIChatBot() {
     {
       id: 1, 
       type: 'bot',
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 APREL OYI UCHUN QABUL BOSHLANDI!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"],
       timestamp: new Date(), 
       streamComplete: true
@@ -703,7 +703,7 @@ export default function RoboschoolAIChatBot() {
         data={registeredData}
       />
 
-      {/* 🎯 MART OYI UCHUN QABUL BANNER */}
+      {/* 🎯 APREL OYI UCHUN QABUL BANNER */}
       <div style={{ 
         width: '100%', 
         maxWidth: '500px', 
@@ -722,7 +722,7 @@ export default function RoboschoolAIChatBot() {
           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
           marginBottom: '4px'
         }}>
-          🎉 MART OYI UCHUN QABUL DAVOM ETMOQDA!
+          🎉 APREL OYI UCHUN QABUL BOSHLANDI!
         </div>
         <div style={{ 
           fontSize: '11px', 
