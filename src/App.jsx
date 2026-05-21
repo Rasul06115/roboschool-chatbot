@@ -17,14 +17,14 @@ const CONFIG = {
   // 🔐 TELEGRAM BOT SOZLAMALARI
   // Token .env faylda saqlanadi (xavfsizlik uchun)
   TELEGRAM_BOT_TOKEN: import.meta.env.VITE_TELEGRAM_BOT_TOKEN || "",
-  TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "",
+  TELEGRAM_CHAT_ID: import.meta.env.VITE_TELEGRAM_CHAT_ID || "319288673",
   
   address: {
     region: "Toshkent viloyati",
     district: "Chinoz tumani", 
     city: "Chinoz shahri",
     street: "Sh.Rashidov ko'chasi, 90-uy",
-    landmark: "Chinoz hokimiyatiga yetmasdan, fotosalon oldida ",
+    landmark: "Chinoz hokimiyatiga yetmasdan, fotosalon oldida",
     floor: "2-qavat",
     mfy: "Xamza MFY"
   },
@@ -117,7 +117,7 @@ const generateAIResponse = (userMessage) => {
   
   if (/^(salom|assalom|hello|hi|hey)/.test(msg)) {
     return {
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MAY OYI UCHUN QABUL BOSHLANDI!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 IYUN OYI UCHUN QABUL BOSHLANDI!\n⚠️ Joylar soni cheklangan!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"]
     };
   }
@@ -125,7 +125,7 @@ const generateAIResponse = (userMessage) => {
   // Dars vaqtlari
   if (msg.includes('vaqt') || msg.includes('soat') || msg.includes('qachon') || msg.includes('smena') || msg.includes('jadval')) {
     return {
-      text: `⏰ DARS VAQTLARI\n\nDarslarimiz haftada 3 marotaba, 2 soatdan bo'lib o'tadi.\n\n🌅 ERTALABKI SMENA:\n• 08:00 — 10:00\n• 10:00 — 12:00\n\n🌆 TUSHDAN KEYIN:\n• 15:00 — 17:00\n\n📌 Farzandingiz maktabda ertalabki yoki tushdan keyingi smenada o'qishiga qarab tanlashingiz mumkin.\n\n🎁 Birinchi sinov darsi BEPUL!`,
+      text: `⏰ OFFLINE KURSLAR — DARS VAQTLARI\n\n🟢 LEGO WeDo (6-8 yosh)\n• Haftada 2 marta, har dars 2 soat\n• Vaqti: Ota-onalar bilan kelishiladi (moslashuvchan)\n\n🟢 ROBOTOTEXNIKA, PYTHON, TELEGRAM BOT, AI KURSLARI\n• Haftada 3 marta, har dars 2 soat\n\n🌅 ERTALABKI SMENA:\n• 08:00 — 10:00\n• 10:00 — 12:00\n\n🌆 TUSHDAN KEYIN:\n• 15:00 — 17:00\n\n🎯 MUHIM: Agar farzandingiz boshqa to'garak bilan vaqti to'g'ri kelsa — ota-onalar bilan kelishiladi!\n\n📞 Ro'yxatdan o'tish: 99-405-32-48`,
       suggestions: ["📝 Ro'yxatdan o'tish", "💰 Narxlar", "📍 Manzil", "📞 Bog'lanish"]
     };
   }
@@ -595,7 +595,7 @@ export default function RoboschoolAIChatBot() {
     {
       id: 1, 
       type: 'bot',
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 MAY OYI UCHUN QABUL BOSHLANDI!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 IYUN OYI UCHUN QABUL BOSHLANDI!\n⚠️ Joylar soni cheklangan!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"],
       timestamp: new Date(), 
       streamComplete: true
@@ -703,7 +703,7 @@ export default function RoboschoolAIChatBot() {
         data={registeredData}
       />
 
-      {/* 🎯 MAY OYI UCHUN QABUL BANNER */}
+      {/* 🎯 IYUN OYI UCHUN QABUL BANNER */}
       <div style={{ 
         width: '100%', 
         maxWidth: '500px', 
@@ -722,14 +722,14 @@ export default function RoboschoolAIChatBot() {
           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
           marginBottom: '4px'
         }}>
-          🎉 MAY OYI UCHUN QABUL BOSHLANDI!
+          🎉 IYUN OYI UCHUN QABUL BOSHLANDI!
         </div>
         <div style={{ 
           fontSize: '11px', 
           color: 'rgba(255,255,255,0.9)',
           fontWeight: '500'
         }}>
-          🎁 Birinchi sinov darsi BEPUL
+          ⚠️ Joylar soni cheklangan | 🎁 Birinchi sinov darsi BEPUL
         </div>
       </div>
 
