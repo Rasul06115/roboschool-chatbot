@@ -117,7 +117,7 @@ const generateAIResponse = (userMessage) => {
   
   if (/^(salom|assalom|hello|hi|hey)/.test(msg)) {
     return {
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 IYUN OYI UCHUN QABUL BOSHLANDI!\n⚠️ Joylar soni cheklangan!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!\n⚠️ Faqat 10 ta o'quvchi qabul qilamiz!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🚀 Shoshiling, o'zingizning joyingizni band eting!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"]
     };
   }
@@ -595,7 +595,7 @@ export default function RoboschoolAIChatBot() {
     {
       id: 1, 
       type: 'bot',
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🎉 IYUN OYI UCHUN QABUL BOSHLANDI!\n⚠️ Joylar soni cheklangan!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🎁 Birinchi sinov darsi BEPUL!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!\n⚠️ Faqat 10 ta o'quvchi qabul qilamiz!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🚀 Shoshiling, o'zingizning joyingizni band eting!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"],
       timestamp: new Date(), 
       streamComplete: true
@@ -703,7 +703,7 @@ export default function RoboschoolAIChatBot() {
         data={registeredData}
       />
 
-      {/* 🎯 IYUN OYI UCHUN QABUL BANNER */}
+      {/* 🎯 AVGUST OYI UCHUN QABUL BANNER */}
       <div style={{ 
         width: '100%', 
         maxWidth: '500px', 
@@ -722,14 +722,14 @@ export default function RoboschoolAIChatBot() {
           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
           marginBottom: '4px'
         }}>
-          🎉 IYUN OYI UCHUN QABUL BOSHLANDI!
+          🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!
         </div>
         <div style={{ 
           fontSize: '11px', 
           color: 'rgba(255,255,255,0.9)',
           fontWeight: '500'
         }}>
-          ⚠️ Joylar soni cheklangan | 🎁 Birinchi sinov darsi BEPUL
+          ⚠️ Faqat 10 ta joy! Shoshiling, o'zingizning joyingizni band eting!
         </div>
       </div>
 
