@@ -10,7 +10,7 @@ const CONFIG = {
   founder: "Rasul Israilov",
   phone: "+998 99 405 32 48",
   telegram: "@rasul_israilov",
-  instagram: "@rasul_israiov",
+  instagram: "@rasul_israilov0508",
   telegramChannel: "https://t.me/roboschool_chinoz",
   graduates: "800+",
   
@@ -117,7 +117,7 @@ const generateAIResponse = (userMessage) => {
   
   if (/^(salom|assalom|hello|hi|hey)/.test(msg)) {
     return {
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!\n⚠️ Faqat 10 ta o'quvchi qabul qilamiz!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🚀 Shoshiling, o'zingizning joyingizni band eting!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n📱 Farzandingiz telefondan bosh ko'tarmayaptimi?\n💡 Uni YARATUVCHIGA aylantiring!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n⚠️ Noyabr oyida faqat 10 ta joy!\n🚀 Hoziroq ro'yxatdan o'ting!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"]
     };
   }
@@ -593,11 +593,11 @@ const SuccessModal = ({ isOpen, onClose, data }) => {
 export default function RoboschoolAIChatBot() {
   const [messages, setMessages] = useState([
     {
-      id: 1, 
+      id: 1,
       type: 'bot',
-      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!\n⚠️ Faqat 10 ta o'quvchi qabul qilamiz!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n🚀 Shoshiling, o'zingizning joyingizni band eting!\n\nQanday savol bilan keldingiz?`,
+      text: `Assalomu alaykum! 👋\n\nMen Roboschool AI yordamchisiman!\n\n📱 Farzandingiz telefondan bosh ko'tarmayaptimi?\n💡 Uni YARATUVCHIGA aylantiring!\n\n🏫 Roboschool — ${CONFIG.foundedYear}-yilda ${CONFIG.founder} tomonidan asos solingan.\n🎓 ${CONFIG.graduates} nafar bitiruvchi!\n\n⚠️ Noyabr oyida faqat 10 ta joy!\n🚀 Hoziroq ro'yxatdan o'ting!\n\nQanday savol bilan keldingiz?`,
       suggestions: ["📚 Kurslar", "⏰ Dars vaqtlari", "🏆 Yutuqlarimiz", "📝 Ro'yxatdan o'tish"],
-      timestamp: new Date(), 
+      timestamp: new Date(),
       streamComplete: true
     }
   ]);
@@ -703,33 +703,41 @@ export default function RoboschoolAIChatBot() {
         data={registeredData}
       />
 
-      {/* 🎯 AVGUST OYI UCHUN QABUL BANNER */}
-      <div style={{ 
-        width: '100%', 
-        maxWidth: '500px', 
+      {/* 🎯 NOYABR OYI UCHUN QABUL BANNER */}
+      <div style={{
+        width: '100%',
+        maxWidth: '500px',
         marginBottom: '10px',
-        padding: '12px 16px',
-        background: 'linear-gradient(135deg, #ff6b35, #f7931e, #ffcc00)',
+        padding: '14px 16px',
+        background: 'linear-gradient(135deg, #e63946, #ff006e, #ff6b35)',
         borderRadius: '16px',
         textAlign: 'center',
-        boxShadow: '0 4px 20px rgba(255, 107, 53, 0.4)',
+        boxShadow: '0 4px 25px rgba(230, 57, 70, 0.5)',
         animation: 'pulse-banner 2s infinite'
       }}>
-        <div style={{ 
-          fontSize: '16px', 
-          fontWeight: '800', 
+        <div style={{
+          fontSize: '14px',
+          fontWeight: '800',
           color: '#fff',
           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-          marginBottom: '4px'
+          marginBottom: '6px'
         }}>
-          🔥 AVGUST OYIDA QABUL DAVOM ETMOQDA!
+          📱 FARZANDINGIZ HALI HAM TELEFONDAN BOSH KO'TARMAYAPTIMI?
         </div>
-        <div style={{ 
-          fontSize: '11px', 
-          color: 'rgba(255,255,255,0.9)',
+        <div style={{
+          fontSize: '15px',
+          color: '#ffeb3b',
+          fontWeight: '700',
+          marginBottom: '6px'
+        }}>
+          💡 Uni YARATUVCHIGA aylantiring!
+        </div>
+        <div style={{
+          fontSize: '11px',
+          color: 'rgba(255,255,255,0.95)',
           fontWeight: '500'
         }}>
-          ⚠️ Faqat 10 ta joy! Shoshiling, o'zingizning joyingizni band eting!
+          ⚠️ Noyabr oyida faqat 10 ta joy! Hoziroq ro'yxatdan o'ting!
         </div>
       </div>
 
@@ -953,4 +961,5 @@ export default function RoboschoolAIChatBot() {
       `}</style>
     </div>
   );
-}
+}  
+
